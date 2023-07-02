@@ -11,7 +11,8 @@ import { BookService } from './book.service';
     <tr>
       <th>ID</th>
       <th>Date</th>
-      <th>Time</th>
+      <th>Start Time</th>
+      
       <th>Person Count</th>      
       <th>Customer Name</th>
       <th>Customer Phone</th>
@@ -24,7 +25,7 @@ import { BookService } from './book.service';
     <tr *ngFor="let booking of bookings">
       <td>{{ booking.id }}</td>
       <td>{{ booking.bdate }}</td>
-      <td>{{ booking.btime }}</td>
+      <td>{{ booking.startTime }}</td>    
       <td>{{ booking.personCount }}</td>
       
       <td>{{ booking.customer.name }}</td>

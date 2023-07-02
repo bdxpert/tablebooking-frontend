@@ -1,7 +1,7 @@
 export interface IBooking {
     id?: number
     bdate: string
-    btime: string
+    startTime: string    
     personCount: number
     notes: string
     customer: Customer

@@ -21,10 +21,10 @@ import { BookService } from './book.service';
   </div>
 
   <div>
-    <label for="btime">Booking Time</label>
-    <input type="time" formControlName="btime" required>
-    <div *ngIf="btime.invalid && btime.touched">
-      <div *ngIf="btime.errors?.['required']">Booking Time is required.</div>
+    <label for="startTime">Booking Start Time</label>
+    <input type="time" formControlName="startTime" required>
+    <div *ngIf="startTime.invalid && startTime.touched">
+      <div *ngIf="startTime.errors?.['required']">Booking Start Time is required.</div>
     </div>
   </div>
 
@@ -142,7 +142,7 @@ export class AddComponent {
 
     bookingForm: FormGroup = inject(FormBuilder).nonNullable.group({
       bdate: ['', Validators.required],
-      btime: ['', Validators.required],
+      startTime: ['', Validators.required],      
       personCount: ['', [Validators.required, Validators.min(1)]],
       notes: [''],
       customer: ['', [Validators.required]],
@@ -157,8 +157,8 @@ export class AddComponent {
       return this.bookingForm.get('bdate') as FormControl;
     }
   
-    get btime() {
-      return this.bookingForm.get('btime') as FormControl;
+    get startTime() {
+      return this.bookingForm.get('startTime') as FormControl;
     }
   
     get personCount() {
@@ -199,7 +199,7 @@ export class AddComponent {
     onReserveHandler() {
       const booking: IBooking = {
         bdate: this.bdate.value,
-        btime: this.btime.value,
+        startTime: this.startTime.value,        
         customer: {
           id: Number(this.customer.value),
           name: '',

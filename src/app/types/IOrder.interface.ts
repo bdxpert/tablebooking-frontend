@@ -18,7 +18,7 @@ export interface IOrder {
   export interface Booking {
     id: number
     bdate: string
-    btime: string
+    startTime: string
     personCount: number
     notes: string
   }

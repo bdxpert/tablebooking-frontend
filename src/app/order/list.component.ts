@@ -34,7 +34,7 @@ import { OrderService } from './order.service';
       <td>{{ order.customer.phone }}</td>
       <td>{{ order.customer.email }}</td>
       <td>{{ order.booking.bdate }}</td>
-      <td>{{ order.booking.btime }}</td>
+      <td>{{ order.booking.startTime }}</td>
       <td>{{ order.booking.personCount }}</td>
       <td>{{ order.booking.notes }}</td>
     </tr>

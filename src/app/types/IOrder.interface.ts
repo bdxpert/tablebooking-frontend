@@ -1,9 +1,10 @@
 export interface IOrder {
-    id: number
+    id?: number
     date: string
     paidAmount: number
     dueAmount: number
     balance: number
+    notes: string
     customer: Customer
     booking: Booking
   }

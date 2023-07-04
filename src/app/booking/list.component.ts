@@ -73,6 +73,7 @@ export class ListComponent {
       }
     })   
   }
+  /*
   getAllBookingsByDate() {        
     this.bookingService.getBookingInfoByDate('2019-06-10').subscribe(response => {
       if(response && response.status === 'OK') {
@@ -80,4 +81,5 @@ export class ListComponent {
       }
     })    
   }
+  */
 }

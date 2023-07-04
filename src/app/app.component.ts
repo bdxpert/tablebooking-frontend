@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
     <a [routerLink]="['', 'booking']">Booking</a> &nbsp;| 
     <a [routerLink]="['', 'booking', 'add']">Add Booking</a>&nbsp;| 
     <a [routerLink]="['', 'customer', 'list']">Customer</a>&nbsp;|
-    <a [routerLink]="['', 'order', 'list']">Transaction</a>
+    <a [routerLink]="['', 'order', 'list']">Transaction</a>&nbsp;|
+    <a [routerLink]="['', 'order', 'add']">Add Transaction</a>
    </nav>
    <router-outlet></router-outlet>
   `,

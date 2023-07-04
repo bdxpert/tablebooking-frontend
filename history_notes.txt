@@ -1,0 +1,16 @@
+ 1059  npm run build
+ 1060  npm build
+ 1061  npm run build
+ 1062  npm build
+ 1063  ng build
+ 1064  ng build
+ 1065  ng build — prod
+ 1066  ng build
+ 1067  ng build
+ 1068  ng build
+ 1069  ng build
+ 1070  ng build
+ 1071  ng build
+ 1072  pwd
+ 1073  history > /Users/mackbook/Documents/history_notes.txt
+ 1074  history > /Users/mackbook/Documents/history_notes.txt

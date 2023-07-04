@@ -17,12 +17,12 @@ export class OrderService {
   }
 
   addOrder(order: IOrder) {
-    return this.httpClient.post<IOrder>(`${env.BaseAPIUrl}/api/transactions`, order);
+    return this.httpClient.post<IResponse<IOrder>>(`${env.BaseAPIUrl}/transactions`, order);
   }
 
 
   deleteOrder(orderId: number) {
-    return this.httpClient.delete<{sucess: string}>(`${env.BaseAPIUrl}/api/transactions/${orderId}`);
+    return this.httpClient.delete<{sucess: string}>(`${env.BaseAPIUrl}/transactions/${orderId}`);
   }
 
   getOrderByCustomerId(customerId: number) {

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ListComponent } from './list.component';
 import { AddComponent } from './add.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -12,7 +13,8 @@ import { RouterModule } from '@angular/router';
     AddComponent,
   ],
   imports: [
-    CommonModule,
+    CommonModule,    
+    ReactiveFormsModule,
     RouterModule.forChild([{
       path: 'list',
       component: ListComponent

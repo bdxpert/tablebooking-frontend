@@ -15,6 +15,9 @@ export class BookService {
   getAllBookings() {
     return this.httpClient.get<IResponse<IBooking[]>>(`${env.BaseAPIUrl}/bookings`);
   }
+  getAllBookingsByCustomer(customerId:string) {
+    return this.httpClient.get<IResponse<IBooking[]>>(`${env.BaseAPIUrl}/bookings/customer/${customerId}`);
+  }
   getBookingInfoByDate(date: string) {
     return this.httpClient.get<IResponse<IBooking[]>>(`${env.BaseAPIUrl}/bookings/date/${date}`);
   }

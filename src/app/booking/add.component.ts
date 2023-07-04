@@ -186,9 +186,10 @@ export class AddComponent {
     }
 
     getAvailableTablesByDate() {
-      //const date = this.bdate.value;
-      const date = '2019-06-10';
-      console.log('####', date);
+      const date = this.bdate.value;
+      //const date = '2019-06-10';
+      // current date
+      console.log('####', date);      
       this.bookService.restaurantTablesByDate(date).subscribe(response => {
         if(response && response.status === 'OK') {
           this.availableBookings = response.data;

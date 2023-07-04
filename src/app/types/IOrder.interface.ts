@@ -2,7 +2,7 @@ export interface IOrder {
     id?: number
     date: string
     paidAmount: number
-    dueAmount: number
+    outstandingBalance: number
     balance: number
     notes: string
     customer: Customer

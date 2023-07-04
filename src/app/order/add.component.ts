@@ -24,6 +24,15 @@ import { Router } from '@angular/router';
       <div *ngIf="date.errors?.['required']">Transaction Date is required.</div>
     </div>
   </div>
+ <!-- Outstanding Amount -->
+ <div>
+    <label for="outstandingBalance">Outstanding Amount</label>
+    <input type="number" id="outstandingBalance" formControlName="outstandingBalance">
+    <div *ngIf="outstandingBalance.invalid && outstandingBalance.touched">
+      <div *ngIf="outstandingBalance.errors?.['required']">Outstanding Amount is required.</div>
+      <div *ngIf="outstandingBalance.errors?.['min']">Outstanding Amount must be greater than or equal to 0.</div>
+    </div>
+  </div>
 
   <!-- Paid Amount -->
   <div>
@@ -35,15 +44,7 @@ import { Router } from '@angular/router';
     </div>
   </div>
 
-  <!-- Due Amount -->
-  <div>
-    <label for="dueAmount">Due Amount</label>
-    <input type="number" id="dueAmount" formControlName="dueAmount">
-    <div *ngIf="dueAmount.invalid && dueAmount.touched">
-      <div *ngIf="dueAmount.errors?.['required']">Due Amount is required.</div>
-      <div *ngIf="dueAmount.errors?.['min']">Due Amount must be greater than or equal to 0.</div>
-    </div>
-  </div>
+ 
 
   <!-- Balance -->
   <!--
@@ -163,7 +164,7 @@ export class AddComponent {
     //id: [null, Validators.required],
     date: [null, Validators.required],
     paidAmount: [0, [Validators.required, Validators.min(0)]],
-    dueAmount: [0, [Validators.required, Validators.min(0)]],
+    outstandingBalance: [0, [Validators.required, Validators.min(0)]],
     balance: [0, [Validators.required, Validators.min(0)]],
     customer: ['', [Validators.required]],
     booking: ['', [Validators.required]],
@@ -184,8 +185,8 @@ export class AddComponent {
   get paidAmount() {
     return this.orderForm.get('paidAmount') as FormControl;
   }
-  get dueAmount() {
-    return this.orderForm.get('dueAmount') as FormControl;
+  get outstandingBalance() {
+    return this.orderForm.get('outstandingBalance') as FormControl;
   }
   get balance() {
     return this.orderForm.get('balance') as FormControl;
@@ -222,8 +223,8 @@ export class AddComponent {
     const orders: IOrder = {
       date: this.date.value,
       paidAmount: this.paidAmount.value,        
-      dueAmount: this.dueAmount.value,        
-      balance: this.dueAmount.value - this.paidAmount.value,        
+      outstandingBalance: this.outstandingBalance.value,        
+      balance:  this.outstandingBalance.value - this.paidAmount.value,        
       notes: this.notes.value,
       customer: {
         id: Number(this.customer.value),   
@@ -237,7 +238,7 @@ export class AddComponent {
         startTime: '',
         personCount: 0,
         notes: ''
-      }      
+      }
     };
 
     this.orderService.addOrder(orders).subscribe(response => {

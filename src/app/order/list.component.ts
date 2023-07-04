@@ -11,8 +11,8 @@ import { OrderService } from './order.service';
     <tr>
       <th>ID</th>
       <th>Date</th>
-      <th>Paid Amount</th>
-      <th>Due Amount</th>
+      <th>Outstanding Amount</th>
+      <th>Paid Amount</th>      
       <th>Balance</th>
       <th>Customer Name</th>
       <th>Customer Phone</th>
@@ -27,8 +27,8 @@ import { OrderService } from './order.service';
     <tr *ngFor="let order of orders">
       <td>{{ order.id }}</td>
       <td>{{ order.date }}</td>
-      <td>{{ order.paidAmount }}</td>
-      <td>{{ order.dueAmount }}</td>
+      <td>{{ order.outstandingBalance }}</td>
+      <td>{{ order.paidAmount }}</td>      
       <td>{{ order.balance }}</td>
       <td>{{ order.customer.name }}</td>
       <td>{{ order.customer.phone }}</td>
@@ -36,7 +36,7 @@ import { OrderService } from './order.service';
       <td>{{ order.booking.bdate }}</td>
       <td>{{ order.booking.startTime }}</td>
       <td>{{ order.booking.personCount }}</td>
-      <td>{{ order.booking.notes }}</td>
+      <td>{{ order.notes }}</td>
     </tr>
   </tbody>
 </table>
